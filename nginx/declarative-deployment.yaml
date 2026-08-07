@@ -6,7 +6,6 @@ metadata:
     environment: test
     organization: marketing
 spec:
-  project: default
   selector:
     matchLabels:
       app: nginx

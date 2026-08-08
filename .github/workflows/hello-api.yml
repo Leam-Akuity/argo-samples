@@ -25,6 +25,6 @@ jobs:
 
       - uses: docker/build-push-action@v7
         with:
-          context: ./hello-api
+          context: ./rest-api
           push: true
           tags: ghcr.io/leam-akuity/argo-samples:latest

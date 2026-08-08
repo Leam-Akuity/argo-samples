@@ -1,0 +1,30 @@
+name: Build hello-api image
+
+on:
+  push:
+    branches: [main]
+    paths: ['rest-api/**']
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-push:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
+
+    - uses: docker/setup-buildx-actions@v3
+
+    - uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GUTHUB_TOKEN }}
+
+    - uses: docker/build-push-actions@v6
+      with:
+        context: ./hello-api
+        push: true
+        tags: ghcr.io/leam-akuity/argo-samples:latest

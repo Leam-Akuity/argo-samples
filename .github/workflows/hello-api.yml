@@ -28,4 +28,6 @@ jobs:
           context: ./rest-api
           push: true
           platforms: linux/arm64
-          tags: ghcr.io/leam-akuity/argo-samples:latest
+          tags: |
+            ghcr.io/leam-akuity/argo-samples:${{ github.sha }}
+            ghcr.io/leam-akuity/argo-samples:latest

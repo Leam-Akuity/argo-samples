@@ -2,7 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: hello-api-test
 resources:
-  - ../../base
+- ../../base
 images:
-  - name: ghcr.io/leam-akuity/argo-samples
-  - newTag: latest
+- newTag: latest
+- name: ghcr.io/Leam-Akuity/argo-samples
+  newTag: latest
+- name: ghcr.io/leam-akuity/argo-samples
